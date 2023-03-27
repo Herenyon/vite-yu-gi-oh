@@ -1,0 +1,24 @@
+<script>
+export default {
+    name: 'Cards',
+    props: {
+        img: String,
+        name: String,
+        type: String,
+        species: String
+    }
+}
+</script>
+
+
+<template>
+    <article class="text-center">
+        <div class="img"><img class="img-fluid" :src="img"></div>
+        <h3>{{ name }}</h3>
+        <div>{{ type }}</div>
+        <div>{{ species }}</div>
+    </article>
+</template>
+
+
+<style lang="scss" scoped></style>
