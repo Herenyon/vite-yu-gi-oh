@@ -20,7 +20,7 @@ export default {
     axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
       .then((response) => {
         console.log(response);
-        this.store.cards = response.data.data.results;
+        this.store.cards = response.data.data;
         this.store.cardsFound = response.data.data.length;
       })
   }
@@ -36,7 +36,4 @@ export default {
 </template>
 
 
-<style lang="scss">
-//versione 1 - inclusione via app.vue
-// @use './assets/scss/main.scss' as *;
-</style>
+<style lang="scss"></style>

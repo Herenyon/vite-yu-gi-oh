@@ -16,9 +16,9 @@ export default {
                     <label for="search-type" class="form-label d-none">Select Type</label>
                     <select class="form-select" id="search-status">
                         <option selected>Select Type</option>
-                        <option value="1">Monster</option>
-                        <option value="2">Spell</option>
-                        <option value="3">Trap</option>
+                        <option value="Monster">Monster</option>
+                        <option value="Spell">Spell</option>
+                        <option value="Trap">Trap</option>
                     </select>
                 </div>
                 <div class="mb-3 col-12 col-sm-auto">
