@@ -6,13 +6,18 @@ export default {
     components: {
         CharacterSearch,
         CharacterList
+    },
+    methods: {
+        handleSearch() {
+            this.$emit('qualcosa');
+        }
     }
 }
 </script>
 
 <template>
     <main>
-        <CharacterSearch />
+        <CharacterSearch @cerca="handleSearch" />
         <CharacterList />
     </main>
 </template>

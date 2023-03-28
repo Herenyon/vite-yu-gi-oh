@@ -16,13 +16,28 @@ export default {
       store
     }
   },
-  created() {
-    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
-      .then((response) => {
-        console.log(response);
-        this.store.cards = response.data.data;
-        this.store.cardsFound = response.data.data.length;
+  methods: {
+    search() {
+      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php', {
+        params: {
+          // name: store.searchKey,
+          // archetype: store.searchArchetype
+        }
       })
+        .then((response) => {
+          console.log(response);
+          this.store.cards = response.data.data;
+          this.store.cardsFound = response.data.data.length;
+        })
+        .catch((error) => {
+          console.log(error);
+          this.store.cards = [];
+          this.store.cardsFound = 0;
+        })
+    }
+  },
+  created() {
+    this.search();
   }
 }
 </script>
@@ -30,7 +45,7 @@ export default {
 <template>
   <div class="mx-5">
     <AppHeader />
-    <AppMain />
+    <AppMain @qualcosa="search" />
     <AppFooter />
   </div>
 </template>

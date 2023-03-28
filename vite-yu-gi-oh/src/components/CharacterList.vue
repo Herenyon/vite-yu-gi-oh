@@ -24,7 +24,7 @@ export default {
             <div class="col-12 col-sm-3" v-for="card in store.cards.slice(0, 50)">
 
 
-                <Cards :img="card.card_images.image_url_small" :name="card.name" :type="card.type" />
+                <Cards :img="card.card_images[0].image_url_small" :name="card.name" :type="card.type" />
 
 
             </div>
